@@ -1,0 +1,19 @@
+[all]
+oidchost ansible_host=10.0.1.61
+
+[all:vars]
+ssh_user=alra
+
+[logistic_api]
+oidchost
+
+[academy_api]
+oidchost
+
+[beathosts:children]
+filebeathosts
+
+[filebeathosts:children]
+logistic_api
+academy_api
+

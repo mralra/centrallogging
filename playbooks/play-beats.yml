@@ -1,0 +1,4 @@
+---
+- hosts: beathosts
+  roles:
+    - role: ../roles/elastic.beats

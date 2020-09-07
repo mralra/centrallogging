@@ -1,0 +1,42 @@
+---
+beat: metricbeat
+beat_conf:
+  metricbeat:
+    modules:
+      - module: system
+        metricsets: [load]
+      - module: system
+        metricsets: [memory]
+      - module: jolokia
+        metricsets: ["jmx"]
+        enabled: true
+        period: 10s
+        hosts: ["localhost:9094"]
+        namespace: "academy_api"
+        path: "/actuator/jolokia"
+        http_method: 'GET'
+        jmx.mappings:
+          - mbean: 'java.lang:type=Memory'
+            attributes:
+             - attr: HeapMemoryUsage
+               field: memory.heap_usage
+             - attr: NonHeapMemoryUsage
+               field: memory.non_heap_usage
+      - module: jolokia
+        metricsets: ["jmx"]
+        enabled: true
+        period: 10s
+        hosts: ["localhost:9095"]
+        namespace: "logistic_api"
+        path: "/actuator/jolokia"
+        http_method: 'GET'
+        jmx.mappings:
+          - mbean: 'java.lang:type=Memory'
+            attributes:
+             - attr: HeapMemoryUsage
+               field: memory.heap_usage
+             - attr: NonHeapMemoryUsage
+               field: memory.non_heap_usage
+
+
+

@@ -1,0 +1,8 @@
+---
+- src: https://github.com/mralra/ansible-role-elk
+  name: elk
+  version: master
+- src: https://github.com/mralra/ansible-role-riemann
+  name: riemann
+  version: master
+- src: elastic.beats

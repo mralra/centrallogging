@@ -1,0 +1,11 @@
+[all]
+oidchost ansible_host=10.0.1.61
+
+[all:vars]
+ssh_user=alra
+
+[beathosts:children]
+metricbeathosts
+
+[metricbeathosts]
+oidchost
