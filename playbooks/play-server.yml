@@ -1,12 +1,9 @@
 ---
 - hosts: logserver
   roles:
-    - role: ../roles/riemann
-      become: yes
-      riemann_version: 0.3.5
     - role: ../roles/elk
       become: yes
       elk_kibana_username: admin
-      elk_kibana_password: WowWhatAStrongPassword4
-      elk_nginx_server_name: kibana.myhost.org
+      elk_kibana_password: password
+      elk_nginx_server_name: webanalytics.domain.com
 

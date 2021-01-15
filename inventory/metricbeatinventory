@@ -1,8 +1,8 @@
 [all]
-oidchost ansible_host=10.0.1.61
+oidchost ansible_host=10.0.1.126
 
 [all:vars]
-ssh_user=alra
+ssh_user=mralra
 
 [beathosts:children]
 metricbeathosts

@@ -5,25 +5,8 @@ beat_conf:
     inputs:
       - type: log
         enabled: true
-        multiline:
-          type: pattern
-          pattern: '^[0-9]{4}-[0-9]{2}-[0-9]{2}'
-          negate: true
-          match: after
         fields:
-          log4j: true
-          application: academy-api
+          apache: true
+          application: apache
         paths:
-          - /var/springboot/academy-api/logs/*.log
-      - type: log
-        enabled: true
-        multiline:
-          type: pattern
-          pattern: '^[0-9]{4}-[0-9]{2}-[0-9]{2}'
-          negate: true
-          match: after
-        fields:
-          log4j: true
-          application: logistic-api
-        paths:
-          - /var/springboot/logistic-api/logs/*.log
+          - /var/log/alra/*.log

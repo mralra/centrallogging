@@ -1,19 +1,15 @@
 [all]
-oidchost ansible_host=10.0.1.61
+oidchost ansible_host=10.0.1.126 ansible_user=mralra
 
 [all:vars]
-ssh_user=alra
+ssh_user=mralra
 
-[logistic_api]
-oidchost
-
-[academy_api]
+[apache]
 oidchost
 
 [beathosts:children]
 filebeathosts
 
 [filebeathosts:children]
-logistic_api
-academy_api
+apache
 
