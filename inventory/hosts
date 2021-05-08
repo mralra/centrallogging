@@ -1,7 +1,5 @@
 [logserver]
-10.0.1.123 ansible_user=mralra
+<IP> ansible_user=alra
 
 [logclients]
-10.8.0.38
-172.16.10.2
-10.0.1.61
+<CLIENTIP>

@@ -27,3 +27,10 @@ beat_conf:
           application: logistic-api
         paths:
           - /var/springboot/logistic-api/logs/*.log
+      - type: log
+        enabled: true
+        fields:
+          apache: true
+          application: apache
+        paths:
+          - /var/log/apache2/*.log

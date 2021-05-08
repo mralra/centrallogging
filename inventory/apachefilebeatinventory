@@ -1,0 +1,11 @@
+[all]
+lamantepub ansible_host=<IP> ansible_user=alra
+
+[all:vars]
+ssh_user=alra
+
+[beathosts:children]
+apachefilebeathosts
+
+[apachefilebeathosts]
+lamantepub

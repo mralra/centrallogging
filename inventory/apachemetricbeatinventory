@@ -1,0 +1,15 @@
+[all]
+lamantepub ansible_host=<IP> ansible_user=alra
+lamanteoidc ansible_host=<IP> ansible_user=alra
+lamantedb ansible_host=<IP> ansible_user=alra
+
+[all:vars]
+ssh_user=alra
+
+[beathosts:children]
+apachemetricbeathosts
+
+[apachemetricbeathosts]
+lamantepub
+lamanteoidc
+lamantedb

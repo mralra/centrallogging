@@ -1,0 +1,11 @@
+[all]
+jsfhost ansible_host=<IP> ansible_user=alra
+
+[all:vars]
+ssh_user=alra
+
+[beathosts:children]
+jsfmetricbeathosts
+
+[jsfmetricbeathosts]
+jsfhost

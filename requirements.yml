@@ -6,3 +6,4 @@
   name: riemann
   version: master
 - src: elastic.beats
+  version: master

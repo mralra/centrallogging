@@ -1,0 +1,15 @@
+---
+beat: filebeat
+beat_conf:
+  filebeat:
+    inputs:
+      - type: log
+        enabled: true
+        fields:
+          apache: true
+          application: apache
+        paths:
+          - /var/log/apache2/*.log
+
+
+

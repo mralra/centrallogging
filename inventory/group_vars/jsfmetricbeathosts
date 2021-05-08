@@ -1,0 +1,28 @@
+---
+beat: metricbeat
+beat_conf:
+  metricbeat:
+    modules:
+      - module: system
+        metricsets: [load]
+      - module: system
+        metricsets: [memory]
+      - module: system
+        metricsets: [cpu]
+        cpu.metrics: [percentages, normalized_percentages, ticks]
+      - module: jolokia
+        metricsets: ["jmx"]
+        enabled: true
+        period: 10s
+        hosts: ["https://rs210947.rs.hosteurope.de:28181"]
+        namespace: "jsf"
+        path: "/jolokia"
+        http_method: 'GET'
+        jmx.mappings:
+          - mbean: 'java.lang:type=Memory'
+            attributes:
+             - attr: HeapMemoryUsage
+               field: memory.heap_usage
+             - attr: NonHeapMemoryUsage
+               field: memory.non_heap_usage
+

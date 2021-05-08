@@ -1,0 +1,15 @@
+---
+beat: metricbeat
+beat_conf:
+  metricbeat:
+    modules:
+      - module: system
+        metricsets: [load]
+      - module: system
+        metricsets: [memory]
+      - module: system
+        metricsets: [cpu]
+        cpu.metrics: [percentages, normalized_percentages, ticks]
+
+
+

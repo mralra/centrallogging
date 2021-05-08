@@ -1,5 +1,4 @@
 ---
 output_conf:
   logstash:
-    hosts: ["10.0.1.123:5000"]
-
+    hosts: ["<IP>:5000"]

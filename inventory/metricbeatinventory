@@ -1,5 +1,5 @@
 [all]
-oidchost ansible_host=10.0.1.61
+oidchost ansible_host=<IP> ansible_user=alra
 
 [all:vars]
 ssh_user=alra

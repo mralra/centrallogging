@@ -1,9 +1,9 @@
 ---
 - hosts: logserver
   roles:
-    - role: ../roles/riemann
-      become: yes
-      riemann_version: 0.3.5
+#    - role: ../roles/riemann
+#      become: yes
+#      riemann_version: 0.3.5
     - role: ../roles/elk
       become: yes
       elk_kibana_username: admin
